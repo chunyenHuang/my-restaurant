@@ -7,7 +7,7 @@ function info($http, $scope, infoService, $rootScope, $location, $anchorScroll) 
   var today = new Date();
   vm.timeNow = today.getTime();
 
-  $scope.update = function (body) {
+  $scope.update = function () {
     var update = infoService.update($rootScope.restaurant);
     update.then(function (res) {
       getInfo();

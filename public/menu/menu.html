@@ -1,0 +1,136 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search..." ng-model="searchProduct">
+      </div>
+    </div>
+  </form>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <td>
+          <a ng-click="sortType = 'available'; sortReverse = !sortReverse">
+            Available
+            <span ng-show="sortType == 'available' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'available' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+
+        <td>
+          <a ng-click="sortType = 'name'; sortReverse = !sortReverse">
+            Name
+            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a ng-click="sortType = 'chinese'; sortReverse = !sortReverse">
+          Chinese
+            <span ng-show="sortType == 'chinese' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'chinese' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a ng-click="sortType = 'description'; sortReverse = !sortReverse">
+          Description
+            <span ng-show="sortType == 'description' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'description' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a ng-click="sortType = 'price'; sortReverse = !sortReverse">
+          Price
+            <span ng-show="sortType == 'price' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'price' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+
+        </td>
+        <td width='25px'>
+          img1
+        </td>
+        <td width='25px'>
+          img2
+        </td>
+        <td>
+          remove
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="item in menu.list | orderBy:sortType:sortReverse | filter:searchProduct">
+        <td>
+          <span editable-checkbox="item.available" e-title='available' onbeforesave="update(item)">
+            <span ng-show='item.available==true'>
+              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            </span>
+            <span ng-show='item.available!=true'>
+              <i class="fa fa-square-o" aria-hidden="true"></i>
+            </span>
+          </span>
+        </td>
+        <td>
+          <span editable-text="item.name" e-name='name' onbeforesave="update(item)">
+            {{item.name}}
+          </span>
+        </td>
+        <td>
+          <span editable-text="item.chinese" e-name='chinese' onbeforesave="update(item)">
+            {{item.chinese}}.
+          </span>
+        </td>
+        <td>
+          <span editable-text="item.description" e-name='description' onbeforesave="update(item)">
+            {{item.description}}.
+          </span>
+        </td>
+        <td>
+          <span editable-text="item.price" e-name='price' onbeforesave="update(item)">
+            {{item.price | currency}}.
+          </span>
+        </td>
+        <td width='25px'>
+          <span editable-text="item.img1" e-name='img1' onbeforesave="update(item)">
+            <img src={{item.img1}} width="100%">.
+          </span>
+        </td>
+        <td width='25px'>
+          <span editable-text="item.img2" e-name='img2' onbeforesave="update(item)">
+            <img src={{item.img2}} width="100%">.
+          </span>
+        </td>
+        <td>
+          <button type="button" class="btn" ng-click='delete(item)'>remove</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+
+</div>
+
+
+<div class="container">
+  <form ng-submit="create()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" ng-model='name' >
+    </div>
+    <div class="form-group">
+      <label for="chinese">Chinese:</label>
+      <input type="text" class="form-control" ng-model='chinese' >
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" ng-model='description' >
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="text" class="form-control" ng-model='price' >
+    </div>
+    <button class='btn' type="submit" name="button">Add to Menu</button>
+  </form>
+</div>

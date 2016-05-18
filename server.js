@@ -8,9 +8,6 @@ var dbClient = mongodb.MongoClient;
 var ObjectId = mongodb.ObjectId;
 var dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/restaurant'
 
-// Routes
-var info = require('./routes/info');
-
 // Module Tools
 var request = require('request');
 var _ = require('underscore');
@@ -19,7 +16,9 @@ var cookieParser = require('cookie-parser');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use('/info', info);
+app.use('/info', require('./routes/info'));
+app.use('/product', require('./routes/product'));
+app.use('/products', require('./routes/products'));
 
 app.use(express.static('./public/'));
 

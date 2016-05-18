@@ -9579,12 +9579,16 @@ body .ui-tooltip {
 
 /* in bootstrap width: 100% => buttons go outside the box */
 .editable-input.editable-has-buttons {
-  width: 200%; }
+  background-color: white;
+  z-index: 9999;
+  width: 100%; }
 
 /* ==== editable-bstime ==== */
 /* workaround for bootstrap that sets width: 100% and inputs become too wide */
 .editable-bstime .editable-input input[type="text"] {
-  width: 200%; }
+  background-color: white;
+  z-index: 9999;
+  width: 100%; }
 
 /* less padding for .well */
 .editable-bstime .well-small {

@@ -36,6 +36,11 @@ app.config(['$routeProvider', function($routeProvider, $routeParams) {
       controller: 'infoController',
       controllerAs: 'info',
     })
+    .when('/menu', {
+      templateUrl: '../menu/menu.html',
+      controller: 'menuController',
+      controllerAs: 'menu',
+    })
 
 
 }]);
