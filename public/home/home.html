@@ -1,5 +1,25 @@
 <div class="container">
   <div class="page-header">
-    <h1>Welcome to {{restaurant.name}} </h1>
+    <h1>
+      {{restaurant.name}}<br>
+      <small>{{restaurant.slogan}}</small>
+    </h1>
+    <p>
+      {{restaurant.phone}} <br>
+      {{restaurant.address}}
+    </p>
+    <p>
+      <a href='{{restaurant.yelp}}'>
+        <i class="fa fa-yelp" aria-hidden="true"></i> yelp
+      </a>
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center" ng-repeat='item in home.menu'>
+      <img src="{{item.img1}}" height="200px">
+      <h5>
+        {{item.name}} {{item.price | currency}}
+      </h5>
+    </div>
   </div>
 </div>

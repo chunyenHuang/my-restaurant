@@ -8,6 +8,10 @@ function home($http, $scope, infoService, $rootScope, $location, $anchorScroll) 
   vm.timeNow = today.getTime();
 
   function activate() {
+    var menu = $http.get('/products');
+    menu.then(function(res) {
+      vm.menu = res.data;
+    })
   }
   activate();
 }
