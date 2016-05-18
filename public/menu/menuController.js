@@ -17,6 +17,13 @@ function menu($http, $scope, infoService, $rootScope, $location, $anchorScroll) 
   $scope.sortType = 'name';
   $scope.sortReverse = false;
   $scope.searchProduct = '';
+  vm.categories = [
+    {value: 'Rice', text: 'Rice'},
+    {value: 'Soup', text: 'Soup'},
+    {value: 'Noodles', text: 'Noodles'},
+    {value: 'Entree', text: 'Entree'},
+    {value: 'other', text: 'other'}
+  ]
   $scope.create = function () {
     var product = {
       name: $scope.name,

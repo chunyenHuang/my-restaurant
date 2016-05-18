@@ -15,7 +15,7 @@
     </p>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center" ng-repeat='item in home.menu'>
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center" ng-repeat='item in home.menu | filter:available=true'>
       <img src="{{item.img1}}" height="200px">
       <h5>
         {{item.name}} {{item.price | currency}}
