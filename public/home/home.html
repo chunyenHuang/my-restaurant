@@ -1,19 +1,5 @@
 <div class="container">
   <div class="page-header">
-    <h1 editable-text="restaurant.name" e-name='name' onbeforesave="update()">
-      {{restaurant.name}}
-    </h1>
+    <h1>Welcome to {{restaurant.name}} </h1>
   </div>
-  <ul>
-    <li>
-      {{restaurant._id}}
-    </li>
-    <li editable-text="restaurant.phone" e-name='phone' onbeforesave="update()">
-      {{restaurant.phone}}</li>
-    <li editable-text="restaurant.email" e-name='email' onbeforesave="update()">
-      {{restaurant.email}}</li>
-    <li editable-text="restaurant.address" e-name='address' onbeforesave="update()">
-      {{restaurant.address}}</li>
-      {{restaurant.update | date: 'yyyy-MM-dd h:mma'}}</li>
-  </ul>
 </div>

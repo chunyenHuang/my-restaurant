@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="page-header">
+    <h1 editable-text="restaurant.name" e-name='name' onbeforesave="update()">
+      {{restaurant.name}}
+    </h1>
+  </div>
+  <ul>
+    <li>
+      {{restaurant._id}}
+    </li>
+    <li>phone:
+      <span editable-text="restaurant.phone" e-name='phone' onbeforesave="update()">
+        {{restaurant.phone}}
+      </span>
+    </li>
+    <li>email:
+      <span editable-text="restaurant.email" e-name='email' onbeforesave="update()">
+        {{restaurant.email}}
+      </span>
+    </li>
+    <li>address:
+      <span editable-text="restaurant.address" e-name='address' onbeforesave="update()">
+        {{restaurant.address}}
+      </span>
+    </li>
+    <li>yelp:
+      <span editable-text="restaurant.yelp" e-name='yelp' onbeforesave="update()">
+        {{restaurant.yelp}}
+      </span>
+    </li>
+    <li>slogan:
+      <span editable-text="restaurant.slogan" e-name='slogan' onbeforesave="update()">
+        {{restaurant.slogan}}
+      </span>
+    </li>
+
+
+      {{restaurant.update | date: 'yyyy-MM-dd h:mma'}}</li>
+  </ul>
+</div>

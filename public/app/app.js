@@ -3,8 +3,11 @@ app.$inject = ['$http'];
 
 app.run(function ($rootScope, $http) {
   $rootScope.logged = false;
-  $rootScope.home = true;
   $rootScope.restaurant = {};
+  var info = $http.get('/info');
+  info.then(function (res) {
+    $rootScope.restaurant = res.data;
+  })
 })
 
 app.run(function(editableOptions) {
@@ -23,6 +26,18 @@ app.config(['$routeProvider', function($routeProvider, $routeParams) {
       controller: 'homeController',
       controllerAs: 'home',
     })
+    .when('/home', {
+      templateUrl: '../home/home.html',
+      controller: 'homeController',
+      controllerAs: 'home',
+    })
+    .when('/info', {
+      templateUrl: '../info/info.html',
+      controller: 'infoController',
+      controllerAs: 'info',
+    })
+
+
 }]);
 
 app.factory('infoService', infoService);
