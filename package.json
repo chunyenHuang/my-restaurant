@@ -1,0 +1,51 @@
+{
+  "name": "my-restaurant",
+  "version": "1.0.0",
+  "description": "A website for restaurant taking online order and changing menus",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunyenHuang/my-restaurant.git"
+  },
+  "author": "John Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chunyenHuang/my-restaurant/issues"
+  },
+  "homepage": "https://github.com/chunyenHuang/my-restaurant#readme",
+  "dependencies": {
+    "angular-socialshare": "^2.1.5",
+    "aws-sdk": "^2.3.7",
+    "body-parser": "^1.15.0",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "fs": "0.0.2",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^2.1.16",
+    "morgan": "^1.7.0",
+    "ngclipboard": "^1.1.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0",
+    "request": "^2.72.0",
+    "rimraf": "^2.5.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-casperjs": "0.0.5",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-s3-upload": "^1.6.0",
+    "gulp-sass": "^2.3.1",
+    "mocha": "^2.4.5",
+    "phantomjs": "^2.1.7"
+  }
+}
