@@ -79,7 +79,7 @@
         </td>
         <td>
           <span editable-select="item.category" e-ng-options="s.value as s.text for s in menu.categories" onbeforesave="update(item)">
-            {{item.category}}.
+            {{item.category}}
           </span>
         </td>
         <td>
@@ -89,27 +89,28 @@
         </td>
         <td>
           <span editable-text="item.chinese" e-name='chinese' onbeforesave="update(item)">
-            {{item.chinese}}.
+            {{item.chinese}}
           </span>
         </td>
         <td>
           <span editable-text="item.description" e-name='description' onbeforesave="update(item)">
-            {{item.description}}.
+            {{item.description}}
           </span>
         </td>
         <td>
           <span editable-text="item.price" e-name='price' onbeforesave="update(item)">
-            {{item.price | currency}}.
+            {{item.price | currency}}
           </span>
         </td>
         <td width='25px'>
           <span editable-text="item.img1" e-name='img1' onbeforesave="update(item)">
-            <img src={{item.img1}} width="100%">.
+            <img src={{item.img1}} width="100%">
           </span>
         </td>
         <td width='25px'>
           <span editable-text="item.img2" e-name='img2' onbeforesave="update(item)">
-            <img src={{item.img2}} width="100%">.
+            <img src={{item.img2}} width="100%">
+            <span ng-show='item.img2==null || item.img2 == ""'>edit</span>
           </span>
         </td>
         <td>
@@ -117,10 +118,7 @@
         </td>
       </tr>
     </tbody>
-
   </table>
-
-
 </div>
 
 
